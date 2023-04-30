@@ -1,0 +1,11 @@
+root: true
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:prettier/recommended
+parser: '@typescript-eslint/parser'
+reportUnusedDisableDirectives: true
+plugins:
+  - '@typescript-eslint'
+rules:
+  eqeqeq: [error, always]
