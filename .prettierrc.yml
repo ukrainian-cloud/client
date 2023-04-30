@@ -2,6 +2,6 @@ trailingComma: all
 semi: true
 singleQuote: true
 arrowParens: always
-editorConfig: true
+editorconfig: true
 bracketSpacing: true
 bracketSameLine: false
