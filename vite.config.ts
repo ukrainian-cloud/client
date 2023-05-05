@@ -1,5 +1,13 @@
-import { defineConfig } from 'vite';
 import prefresh from '@prefresh/vite';
+import { load as parseYAML } from 'js-yaml';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { defineConfig } from 'vite';
+import htmlPlugin from 'vite-plugin-html-config';
+
+const {
+	'html-config': htmlConfig,
+} = parseYAML(readFileSync(resolve(__dirname, './config.yml'), 'utf8'));
 
 const prefix = 'dev-only:';
 const resolvedPrefix = '\0' + prefix;
@@ -29,5 +37,21 @@ function devOnlyNamespacePlugin() {
 }
 
 export default defineConfig({
-	plugins: [prefresh(), devOnlyNamespacePlugin()],
+	plugins: [prefresh(), devOnlyNamespacePlugin(), htmlPlugin(htmlConfig)],
+	resolve: {
+		alias: {
+			'@' : resolve(__dirname, './src'),
+			'@components' : resolve(__dirname, './components/web'),
+			'@utils' : resolve(__dirname, './utils'),
+			react: 'preact/compat',
+			'react-dom/test-utils': 'preact/test-utils',
+			'react-dom': 'preact/compat', // Must be below test-utils
+			'react/jsx-runtime': 'preact/jsx-runtime',
+		},
+	},
+	css: {
+		modules: {
+			localsConvention: 'camelCaseOnly',
+		},
+	},
 });

@@ -1,0 +1,48 @@
+definitions:
+  web-link: &web-link https://ukrainian.cloud/
+  web-og-image: &web-og-image /identity/og-image.svg
+  icon: &icon /identity/logo-nobg.svg
+  title: &title Ukrainian Cloud | Українська об'єднана соцмережа
+  description: &description Зустрічайте дійсно безмежну соціальну мережу — Ukrainian Cloud. Вона об'єднує як вільні протоколи спілкування (SMTP (E-Mail), Matrix, ActivityPub (Mastodon/Pleroma/тощо)), так і пропрієтарні, дозволяючи вам спілкуватись з користувачами з різних систем в єдиному інтерфейсі. Долучайтеся!
+
+html-config:
+  title: *title
+  links:
+    - rel: icon
+      type: image/svg+xml
+      href: *icon
+  metas:
+    - charset: UTF-8
+    - name: viewport
+      content: width=device-width, initial-scale=1.0
+    - name: title
+      content: *title
+    - name: description
+      content: *description
+    - name: og:type
+      content: website
+    - name: og:url
+      content: *web-link
+    - name: og:title
+      content: *title
+    - name: og:description
+      content: *description
+    - name: og:image
+      content: *web-og-image
+    - name: twitter:card
+      content: summary_large_image
+    - name: twitter:url
+      content: *web-link
+    - name: twitter:title
+      content: *title
+    - name: twitter:description
+      content: *description
+    - name: twitter:image
+      content: *web-og-image
+
+site:
+  link: https://ukrainian.cloud/
+  icon: /identity/logo-nobg.svg
+  og-image: /identity/og-image.svg
+  title: Ukrainian Cloud | Українська об'єднана соцмережа
+  description: Зустрічайте дійсно безмежну соціальну мережу — Ukrainian Cloud. Вона об'єднує як вільні протоколи спілкування (SMTP (E-Mail), Matrix, ActivityPub (Mastodon/Pleroma/т.п.)), так і пропрієтарні, дозволяючи вам спілкуватись з користувачами з різних систем в єдиному інтерфейсі. Долучайтеся!
