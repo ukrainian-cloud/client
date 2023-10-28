@@ -1,0 +1,21 @@
+root: true
+extends:
+  - plugin:vue/vue3-recommended
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - '@vue/typescript/recommended'
+  - '@vue/prettier'
+env:
+  browser: true
+  es2021: true
+  node: true
+parserOptions:
+  ecmaVersion: 2021
+reportUnusedDisableDirectives: true
+plugins:
+  - '@typescript-eslint'
+rules:
+  eqeqeq: [error, always]
+  vue/multi-word-component-names: 0
+  quotes: [error, single, { avoidEscape: true, allowTemplateLiterals: false }]
+  comma-dangle: [error, always-multiline]
