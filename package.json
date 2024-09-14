@@ -13,7 +13,6 @@
 		"lint:prettier:fix": "yarn lint:prettier --write",
 		"lint": "concurrently -n eslint,prettier \"yarn lint:eslint${LINT_FIX}\" \"yarn lint:prettier${LINT_FIX}\"",
 		"lint:fix": "LINT_FIX=':fix' yarn lint",
-		"deploy": "firebase deploy --only hosting --token \"$FIREBASE_TOKEN\"",
 		"preview": "vite preview"
 	},
 	"dependencies": {
